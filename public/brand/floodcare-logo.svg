@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="FloodCare Hospital">
+  <rect width="512" height="512" rx="96" fill="#0f766e"/>
+  <path fill="#fff" d="M216 88h80v112h112v80H296v112h-80V280H104v-80h112z"/>
+  <path fill="none" stroke="#99f6e4" stroke-width="24" stroke-linecap="round" d="M88 430c44-34 88-34 132 0s88 34 132 0 60-34 72-20"/>
+</svg>

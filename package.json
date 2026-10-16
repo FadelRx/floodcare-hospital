@@ -1,0 +1,55 @@
+{
+  "name": "floodcare-hospital",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "FloodCare Hospital — แพลตฟอร์มโอเพนซอร์สเพื่อการเตรียมพร้อมและบริหารภาวะภัยพิบัติในโรงพยาบาล (โรงพยาบาลเดียว · Cloudflare Workers + D1)",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "setup": "node --import ./tests/register-alias.mjs scripts/setup.mjs",
+    "doctor": "node --import ./tests/register-alias.mjs scripts/doctor.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "node scripts/lint.mjs",
+    "test": "node --import ./tests/register-alias.mjs --test --test-concurrency=4 \"tests/**/*.test.ts\"",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "cf-typegen": "wrangler types",
+    "db:migrate:local": "node scripts/db-migrate.mjs --local",
+    "db:migrate:remote": "node scripts/db-migrate.mjs --remote",
+    "db:bootstrap:local": "node --import ./tests/register-alias.mjs scripts/db-bootstrap.mjs --local",
+    "db:bootstrap:remote": "node --import ./tests/register-alias.mjs scripts/db-bootstrap.mjs --remote",
+    "account:issue": "node --import ./tests/register-alias.mjs scripts/issue-account.mjs",
+    "deploy:plan": "node --import ./tests/register-alias.mjs scripts/deploy.mjs --plan",
+    "deploy": "node --import ./tests/register-alias.mjs scripts/deploy.mjs",
+    "icons": "node scripts/gen-icons.mjs"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.7",
+    "jose": "^6.2.3",
+    "next": "^15.5.27",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.5.2",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.6.0",
+    "wrangler": "^4.143.0"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "$postcss"
+    },
+    "undici": "^7.30.0",
+    "sharp": "^0.35.5"
+  }
+}

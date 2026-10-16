@@ -1,0 +1,4 @@
+# ข้อความทุกไฟล์เก็บเป็น LF ใน repo — กันเทสต์ที่อ่านไฟล์แบบไบต์ต่อไบต์พังบน Windows (core.autocrlf)
+* text=auto eol=lf
+*.png binary
+*.ico binary

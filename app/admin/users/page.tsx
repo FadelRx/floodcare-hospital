@@ -1,0 +1,3 @@
+import { currentSession } from "@/lib/auth/current";
+import { redirect } from "next/navigation";
+export default async function Users(){const session=await currentSession();if(!session)redirect("/login");if(session.role==="Staff")redirect("/dashboard");return <main className="wrap"><section className="card"><h1>จัดการผู้ใช้</h1><p>SystemAdmin สร้างบัญชี เปลี่ยนบทบาท และปิดบัญชีผ่าน <code>/api/users</code> ได้ UnitAdmin ดูบัญชีในหน่วยของตน การเปลี่ยนแปลงเพิกถอนเซสชันเดิมและบันทึก audit</p><p className="notice">ฐานข้อมูลใหม่ไม่มีบัญชีเริ่มต้น โปรดออกบัญชี SystemAdmin แรกตาม docs/FIRST-ADMIN.md</p></section></main>}
